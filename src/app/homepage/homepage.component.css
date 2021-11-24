@@ -1,0 +1,47 @@
+.body {
+    font-family: Helvetica;
+    font-size: 22px;
+    color: seashell;
+    background-color: black;
+   
+}
+
+.background {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image : url("https://wallpaperaccess.com/full/220303.jpg");
+    height: 800px;
+    min-width: 1200px;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-bottom: 80px;
+    opacity: 0.9;
+}
+
+.background .slogan{
+    flex-shrink:0;
+    text-align: center;
+    width:100%;
+    opacity: 1;
+}
+
+.slogan h1{
+    font-size: 55px;
+    margin-bottom: 10px;
+    letter-spacing: 20px;
+}
+
+.slogan h4{
+
+}
+
+
+.container .subtitle{
+    text-align: center;
+    width: 100%;
+}
+
+
+
