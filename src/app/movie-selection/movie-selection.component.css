@@ -1,0 +1,85 @@
+/*
+.movie {
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.5);
+   
+}
+
+.movie img {
+    width: 100%;
+    height: auto;
+}
+
+.gallery{
+    display: grid;
+    grid-template-columns: 300px 300px 300px 300px;
+    grid-template-rows: repeat (3, 450px);
+    grid-gap: 25px;
+    margin-top: 40px;
+    grid-auto-rows: 500px;
+    justify-items: center;
+    justify-content: center;
+    align-items: stretch;
+    align-content: center;
+    grid-auto-flow: rows;
+    grid-auto-rows: minmax(300px, auto)
+}
+
+.movie-details {
+    text-align:justify;
+    text-justify: inter-character;
+}
+
+*/
+
+/*
+<div class ="movie" *ngFor = "let movie of loadedMovies"  style = "cursor: pointer">
+        <img src = "https://image.tmdb.org/t/p/w500{{movie.poster_path}}" (click) = "displaySelectedMovie(movie)"/> 
+
+            <h3 style = "text-align: center">{{movie.title}}</h3>
+            <div class = "movie-details">
+            
+            <h5>{{movie.overview}}</h5>
+        </div>
+     </div>
+     */
+
+.movie-container{
+    margin: 50px;
+    
+}
+.selected-movie{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.5);
+}
+.selected-movie img{
+    width: 25%;
+    height: auto;
+    border :#d4af37 1px solid;
+}
+
+.movie-title{
+  
+    font-size: 20px;
+ 
+}
+.movie-description{
+    font-size: 20px;
+  padding-left: 20px;
+}
+
+.gallery{
+    display: grid;
+    grid-template-columns: 300px 300px 300px 300px 300px 300px;
+    grid-template-rows: repeat (3, 450px);
+    grid-gap: 25px;
+    margin-top: 40px;
+    grid-auto-rows: 500px;
+    justify-items: center;
+    justify-content: center;
+    align-items: stretch;
+    align-content: center;
+    grid-auto-flow: rows;
+    grid-auto-rows: minmax(300px, auto)
+}

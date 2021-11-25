@@ -13,7 +13,8 @@ import { RouterModule, Routes } from '@angular/router';
 
 const appRoutes: Routes = [
   {path: '', component: HomepageComponent},
-  {path:'selction', component: MovieSelectionComponent}
+  //{path: 'selection/:title/:image/:description', component: MovieSelectionComponent}
+  {path: 'selection', component: MovieSelectionComponent}
 ];
 
 @NgModule({
@@ -28,7 +29,7 @@ const appRoutes: Routes = [
   imports: [
     BrowserModule,
     HttpClientModule,
-    RouterModule
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [MovieService],
   bootstrap: [AppComponent]

@@ -1,10 +1,10 @@
 <div class = "gallery"  >
     
     <div class ="movie" *ngFor = "let movie of loadedMovies"  style = "cursor: pointer">
-        <img src = "https://image.tmdb.org/t/p/w500{{movie.poster_path}}" (click) = "displaySelectedMovie()"/> 
+        <img src = "https://image.tmdb.org/t/p/w500{{movie.poster_path}}" (click) = "displaySelectedMovie(movie)"/> 
 
             <h3 style = "text-align: center">{{movie.title}}</h3>
-        <div class = "movie-details">
+            <div class = "movie-details">
             
             <h5>{{movie.overview}}</h5>
         </div>

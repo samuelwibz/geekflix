@@ -1,1 +1,32 @@
-<p>movie-selection works!</p>
+<div class = "movie-container">
+    <div class = "selected-movie" *ngFor = "let movie of userSelectedMovie">      
+        
+        <img src = "https://image.tmdb.org/t/p/w500{{movie.poster_path}}"/>
+
+        <div class = "movie-description">
+            <div class = "movie-title">
+                <h1> {{movie.title}}</h1>
+            </div>
+             <p> {{movie.overview}}</p>
+        </div>
+    </div>
+</div>
+
+
+<div class = "gallery"  >
+    
+    <div class = "movie"   >
+        <img src = "https://image.tmdb.org/t/p/w500"   /> 
+
+            <h3 style = "text-align: center"></h3>
+            <div class = "movie-details">
+            
+            <h5></h5>
+        </div>
+     
+
+
+</div>
+
+
+<!--https://image.tmdb.org/t/p/w500  -->
