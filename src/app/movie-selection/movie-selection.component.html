@@ -1,32 +1,48 @@
+
+<div class = selected-movie-container>
+    <script src="https://kit.fontawesome.com/02c8e97696.js" crossorigin="anonymous"></script>
 <div class = "movie-container">
-    <div class = "selected-movie" *ngFor = "let movie of userSelectedMovie">      
+    <div class = "selected-movie" *ngFor = "let movie of userSelectedMovie"   >       
         
         <img src = "https://image.tmdb.org/t/p/w500{{movie.poster_path}}"/>
 
         <div class = "movie-description">
             <div class = "movie-title">
-                <h1> {{movie.title}}</h1>
+                <h1> {{movie.title}}</h1> 
             </div>
              <p> {{movie.overview}}</p>
+
+
+            <div class = "rating">
+                <p>Tell us how you feel about it!</p>
+                <ul>
+               <li style = "font-size: 30px;"><i class="fa fa-smile-o" aria-hidden="true" (click) = "addHappyEmotionMovie(movie)"></i></li>
+               <li style = "font-size: 30px;"><i class="fa fa-meh-o" aria-hidden="true" (click) = "addNeutralEmotionMovie(movie)"></i></li>
+               <li style = "font-size: 30px;"><i class="fa fa-frown-o" aria-hidden="true" (click) = "addSadEmotionMovie(movie)"></i></li>
+             </ul>
+            </div>
         </div>
     </div>
 </div>
 
 
+
+<h2 style = "text-align: center; margin-top: 150px; margin-bottom: 70px;">Here are some more that you might like</h2>
 <div class = "gallery"  >
     
-    <div class = "movie"   >
-        <img src = "https://image.tmdb.org/t/p/w500"   /> 
+    <div class = "movie"  *ngFor = "let movie of similarMovies" (click) =  "displaySelectedMovie(movie)">
+        <img src = "https://image.tmdb.org/t/p/w500{{movie.poster_path}}"   /> 
 
-            <h3 style = "text-align: center"></h3>
+            <h3 style = "text-align: center">{{movie.title}}</h3>
             <div class = "movie-details">
             
-            <h5></h5>
-        </div>
-     
-
-
+            <h5>{{movie.overview}}</h5>
+    </div>
+        
+ </div>
+    
+ <div class = "refresh-button">
+    <button (click) = "refreshSimilarMovieList()">Refresh Movies</button>
 </div>
 
-
-<!--https://image.tmdb.org/t/p/w500  -->
+</div>

@@ -1,48 +1,6 @@
-/*
-.movie {
-    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.5);
-   
+.selected-movie-container{
+    position:relative
 }
-
-.movie img {
-    width: 100%;
-    height: auto;
-}
-
-.gallery{
-    display: grid;
-    grid-template-columns: 300px 300px 300px 300px;
-    grid-template-rows: repeat (3, 450px);
-    grid-gap: 25px;
-    margin-top: 40px;
-    grid-auto-rows: 500px;
-    justify-items: center;
-    justify-content: center;
-    align-items: stretch;
-    align-content: center;
-    grid-auto-flow: rows;
-    grid-auto-rows: minmax(300px, auto)
-}
-
-.movie-details {
-    text-align:justify;
-    text-justify: inter-character;
-}
-
-*/
-
-/*
-<div class ="movie" *ngFor = "let movie of loadedMovies"  style = "cursor: pointer">
-        <img src = "https://image.tmdb.org/t/p/w500{{movie.poster_path}}" (click) = "displaySelectedMovie(movie)"/> 
-
-            <h3 style = "text-align: center">{{movie.title}}</h3>
-            <div class = "movie-details">
-            
-            <h5>{{movie.overview}}</h5>
-        </div>
-     </div>
-     */
-
 .movie-container{
     margin: 50px;
     
@@ -65,13 +23,17 @@
  
 }
 .movie-description{
+    position: relative;
     font-size: 20px;
   padding-left: 20px;
 }
 
 .gallery{
+    position:absolute;
     display: grid;
-    grid-template-columns: 300px 300px 300px 300px 300px 300px;
+    margin-left: 100px;
+    align-self: center;
+    grid-template-columns: repeat(6,250px);
     grid-template-rows: repeat (3, 450px);
     grid-gap: 25px;
     margin-top: 40px;
@@ -81,5 +43,64 @@
     align-items: stretch;
     align-content: center;
     grid-auto-flow: rows;
-    grid-auto-rows: minmax(300px, auto)
+    grid-auto-rows: minmax(300px, auto);
+    margin-bottom: 5px;
+}
+
+.movie {
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.5);
+   
+}
+
+.movie img {
+    width: 100%;
+    height: auto;
+}
+
+.movie-details {
+    text-align:justify;
+    text-justify: inter-character;
+}
+
+.movie-description li{
+    display: inline-block;
+    list-style: none;
+    
+    padding-right: 40px;
+}
+
+.movie-description i{
+     color: #d4af37;
+}
+.movie-description i:hover{
+    color: #C0D6DF;
+    font-size: 50px;
+}
+.movie-description .rating{
+    
+    color: #d4af37;
+    margin-top: 70px;
+    padding: 10px;
+    position: absolute;
+    left : 18px;
+    text-align: start;
+    
+}
+
+
+
+  .refresh-button {
+    height: 70px;
+    position: absolute;
+    bottom: -200px;
+}
+
+.refresh-button button{
+    border-radius: 15px;
+    padding: 10px;
+    background-color: #d4af37;
+}
+
+.refresh-button button:hover{
+    text-decoration: underline;
 }

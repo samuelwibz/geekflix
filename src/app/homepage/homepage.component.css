@@ -3,14 +3,14 @@
     font-size: 22px;
     color: seashell;
     background-color: black;
-   
+    background-image : url("https://wallpaperaccess.com/full/220303.jpg");
 }
 
 .background {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image : url("https://wallpaperaccess.com/full/220303.jpg");
+    
     height: 800px;
     min-width: 1200px;
     width: 100%;

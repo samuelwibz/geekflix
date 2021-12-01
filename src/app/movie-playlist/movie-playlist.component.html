@@ -1,0 +1,16 @@
+    <div style = " width: 100%;" >
+         <h2 style = "text-align: center; margin: 60px;">Your playlist of movies</h2>
+
+<select (change) = "movieSelected($event)" class = "playlist-selection">
+    <option value = "" disabled selected >Selection</option>
+    <option *ngFor = "let playlist of playlistFilter" value = "{{playlist.mood}}" >{{playlist.name}}</option>
+</select>
+
+<div cdkDropList class = "example-list" (cdkDropListDropped) = "drop($event)">
+  <div class="example-box" *ngFor="let movie of selectedMoviePlaylist" cdkDrag>
+        {{movie.title}}   
+    <img *cdkDragPreview [src] = "'https://image.tmdb.org/t/p/w200'+movie.poster_path" [alt] = "movie.title"/>
+  </div>
+</div>
+
+</div>

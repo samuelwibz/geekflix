@@ -1,0 +1,35 @@
+
+nav{
+    position:fixed;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 10px 30px 10px 30px;
+    height: 50px;
+    width:100%;
+    z-index: 5;
+}
+
+.movie-list{
+    float:right;
+}
+
+ 
+   .movie-list a:link {
+    color: seashell;
+    text-decoration: none;
+    letter-spacing: 2px;
+    font-weight: 400;
+  }
+
+ .movie-list a:visited{
+    color: seashell;
+  }
+  
+.movie-list :hover{
+    text-decoration: underline !important;
+    color:#C0D6DF !important;
+    
+}
+.movie-list a:active{
+    text-decoration: underline;
+    color:#C0D6DF !important;
+}

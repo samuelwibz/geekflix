@@ -1,32 +1,19 @@
 <div class = "gallery"  >
     
-    <div class ="movie" *ngFor = "let movie of loadedMovies"  style = "cursor: pointer">
-        <img src = "https://image.tmdb.org/t/p/w500{{movie.poster_path}}" (click) = "displaySelectedMovie(movie)"/> 
+    <div class ="movie" *ngFor = "let movie of loadedMovies; let i = index" (mouseover)="displayDelete= i" (mouseout) = "displayDelete = -1" >
+        <img src = "https://image.tmdb.org/t/p/w500{{movie.poster_path}}" (click) = "displaySelectedMovie(movie)" /> 
 
+            <div (click) = "deleteMovie(movie)"><i class="fa fa-times-circle-o" aria-hidden="true" [ngStyle] = "{'visibility': displayDelete===i ? 'visible':'hidden'}"></i></div>
+            
+      
             <h3 style = "text-align: center">{{movie.title}}</h3>
-            <div class = "movie-details">
+            <div style = "font-size: 8px; padding: 0 5px;" class= "movie-details">
             
             <h5>{{movie.overview}}</h5>
+
         </div>
      </div>
 
 </div>
 
 
-<!--
-    <p *ngIf = "loadedMovies.length < 1"> None</p>
-    <ul class = "list-group" *ngIf = "loadedMovies.length >= 1">
-        <li class = "list-group-item" *ngFor = "let movie of loadedMovies">
-                <p>{{movie.title}}</p>
-        </li>
-    </ul>
--->
-
-
-
-
-<!--
-    <div class = "movie">
-        <img src="https://content.codecademy.com/courses/learn-css-grid/lesson-ii/image-1.png" />
-    </div>
--->

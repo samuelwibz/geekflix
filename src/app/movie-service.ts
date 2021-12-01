@@ -1,35 +1,36 @@
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
-import { HttpClient } from "@angular/common/http";
+import { HttpClient , HttpParams} from "@angular/common/http";
 import { MovieDetails } from "./movie-details.model";
+import { ActivatedRoute, Router } from "@angular/router";
 
 
 @Injectable()
 export  class MovieService {
     
-    selectedMovies: MovieDetails [] = [];
+     selectedMovie: MovieDetails [] = [];
 
-    constructor(private httpClient :HttpClient){}
+    constructor(private httpClient :HttpClient, private route: ActivatedRoute, private router: Router){}
     
-    
-        getData(): Observable<any>{
+        getMovieDetails(): Observable<any>{
             return this.httpClient.get<MovieDetails>("https://api.themoviedb.org/3/discover/movie?api_key=ee311cf55f11854e4456bfb7e592e06e&with_genres=878#");
         }
 
-        addToSelectedMovie (selectedMovie: MovieDetails){
-            this.selectedMovies.push(selectedMovie);
-            //this.selectedMovies.length = 0;
-            //console.log(this.selectedMovies.splice);
+        addToSelectedMovie (movie: MovieDetails){
+            this.selectedMovie.length = 0;
+            this.selectedMovie.push(movie);
         }
 
-        getSelectdMovie(){
-            return this.selectedMovies;
+        getSelectedMovie(){
+                return this.selectedMovie;
         }
 
-        
-    
-
-    
+        addDisplaySelectedMovie(movie: MovieDetails){
+            this.router.navigate(['/selection']);
+            console.log(movie);
+            this.addToSelectedMovie(movie);
+        }
+            
 }
 
 //https://api.themoviedb.org/3/movie/550?api_key=ee311cf55f11854e4456bfb7e592e06e
